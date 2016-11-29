@@ -11,7 +11,7 @@ ENV AWS_ACCESS_KEY_ID="" \
     TARGET_PORT=""
 
 RUN apt-get update && \
-    apt-get install -y curl unzip python && \
+    apt-get install -y curl unzip python pv && \
     apt-get clean && \
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o awscli-bundle.zip && \
     unzip awscli-bundle.zip && \

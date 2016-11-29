@@ -6,6 +6,7 @@ set -e
 
 aws s3 cp $SOURCE_S3_URL - | \
   gunzip | \
+  pv | \
   sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | \
   mysql --user=$TARGET_USERNAME \
         --password=$TARGET_PASSWORD \
